@@ -12,7 +12,11 @@ from site_app.templatetags.site_tags import nombre_en_lettres, with_base_path
 
 class LoadersTests(SimpleTestCase):
     def test_charge_nombre_de_trails_exemple(self):
-        self.assertEqual(loaders.nombre_trails(), 7)
+        self.assertEqual(loaders.nombre_trails(), 8)
+
+    def test_valide_le_lien_du_site_de_course(self):
+        self.assertEqual(loaders._url_externe("https://exemple.fr/course"), "https://exemple.fr/course")
+        self.assertEqual(loaders._url_externe("javascript:alert(1)"), "")
 
     def test_na_est_omis_et_fichier_absent_est_signale(self):
         with tempfile.TemporaryDirectory() as dossier:
@@ -40,7 +44,7 @@ class LoadersTests(SimpleTestCase):
 
     def test_remplace_les_variables_du_reglement(self):
         reglement = loaders.reglement_valide()
-        self.assertIn("7 courses", reglement["introduction"])
+        self.assertIn("8 courses", reglement["introduction"])
         self.assertIn("samedi 12 décembre 2026", reglement["articles"][3]["texte"])
 
     def test_nombre_de_trails_est_ecrit_en_lettres(self):

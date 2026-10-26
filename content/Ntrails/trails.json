@@ -1,9 +1,58 @@
 [
-  {"affiche": "", "nom": "Trail des Coteaux", "description": "Une boucle vallonnée entre chemins de terre et petites routes de campagne.", "date": "15 mars", "lieu": "Saint-Lys"},
-  {"affiche": "", "nom": "La Boucle du Touch", "description": "Un parcours nature convivial au fil des sentiers et des berges.", "date": "12 avril", "lieu": "Plaisance-du-Touch"},
-  {"affiche": "", "nom": "Trail des Vignes", "description": "Des chemins en balcon et de beaux panoramas sur la campagne toulousaine.", "date": "17 mai", "lieu": "Rieumes"},
-  {"affiche": "", "nom": "Les Foulées du Lauragais", "description": "Une course accessible qui mêle chemins agricoles et passages ombragés.", "date": "14 juin", "lieu": "Seysses"},
-  {"affiche": "", "nom": "Trail de la Save", "description": "Une aventure nature entre sous-bois, ruisseaux et chemins vallonnés.", "date": "13 septembre", "lieu": "Lévignac"},
-  {"affiche": "", "nom": "Les Sentiers de la Louge", "description": "Un rendez-vous sportif et festif autour des sentiers du village.", "date": "11 octobre", "lieu": "Muret"},
-  {"affiche": "", "nom": "Trail des Lumières", "description": "La dernière étape du challenge dans une ambiance chaleureuse.", "date": "8 novembre", "lieu": "Fonsorbes"}
+  {
+    "affiche": "Ntrails/affiches/courslapied.avif",
+    "nom": "Cour'sla pied",
+    "description": "Une boucle vallonnée entre chemins de terre et petites routes de campagne.",
+    "date": "30 mars 2026",
+    "lieu": "Noueilles",
+    "site_web": "https://www.slaquesaquo.fr/fr"
+  },
+  {
+    "affiche": "Ntrails/affiches/souvenir.avif",
+    "nom": "Challenge du souvenir et de la paix",
+    "description": "Un parcours nature convivial à travers le lauragais.",
+    "date": "8 mai 2026",
+    "lieu": "Pompertuzat",
+    "site_web": "https://trailpompertuzat.com/"
+  },
+  {
+    "affiche": "Ntrails/affiches/akuma.jpg",
+    "nom": "Akuma run",
+    "description": "Des chemins en balcon et de beaux panoramas sur la campagne.",
+    "date": "23 mai 2026",
+    "lieu": "Saint-Sulpice sur Lèze",
+    "site_web": "https://www.associationakuma.fr/akuma-trail/"
+  },
+  {
+    "affiche": "Ntrails/affiches/biscoteaux.avif",
+    "nom": "Biscoteau Trail",
+    "description": "Une course au milieu des singles et passages ombragés.",
+    "date": "21 juin 2026",
+    "lieu": "Vigoulet-Auzil",
+    "site_web": "https://biscoteaux-trail.fr/"
+  },
+  {
+    "affiche": "Ntrails/affiches/venerque.avif",
+    "nom": "Venerque Trail",
+    "description": "Une aventure nature entre sous-bois, ruisseaux et chemins vallonnés.",
+    "date": "6 septembre 2026",
+    "lieu": "Vénerque",
+    "site_web": "https://www.trailvenerque.com/"
+  },
+  {
+    "affiche": "Ntrails/affiches/gaulois.avif",
+    "nom": "Trail gaulois",
+    "description": "Un rendez-vous sportif et festif autour des sentiers du village.",
+    "date": "11 octobre 2026",
+    "lieu": "Rieux-Volvestre",
+    "site_web": "https://courirenvolvestre.com/"
+  },
+  {
+    "affiche": "Ntrails/affiches/bosses.avif",
+    "nom": "Trail des bosses",
+    "description": "La dernière étape du challenge dans une ambiance chaleureuse.",
+    "date": "29 novembre 2026",
+    "lieu": "Auterive",
+    "site_web": "https://chrono-start.com/events/trail-auterive/"
+  }
 ]

@@ -10,9 +10,9 @@
       <div class="trail-card-top"><span class="trail-number">{{ forloop.counter|stringformat:"02d" }}</span><span class="trail-date">{{ trail.date }}</span></div>
       {% if trail.affiche_url %}
         {% if trail.affiche_url|lower|slice:"-4:" == ".pdf" %}<a class="pdf-link" href="{% static trail.affiche_url %}" target="_blank" rel="noopener noreferrer">Voir l'affiche (PDF) <span aria-hidden="true">↗</span></a>
-        {% else %}<img class="trail-poster" src="{% static trail.affiche_url %}" alt="Affiche de {{ trail.nom }}" loading="lazy">{% endif %}
+        {% else %}<a class="trail-poster-link" href="{% static trail.affiche_url %}" target="_blank" rel="noopener noreferrer" aria-label="Afficher l'affiche de {{ trail.nom }} en grand"><img class="trail-poster" src="{% static trail.affiche_url %}" alt="Affiche de {{ trail.nom }}" loading="lazy"></a>{% endif %}
       {% else %}<div class="trail-placeholder" aria-hidden="true"><span>COURSE<br>NATURE</span></div>{% endif %}
-      <div class="trail-card-body"><h2>{{ trail.nom }}</h2><p>{{ trail.description }}</p><p class="trail-place"><span aria-hidden="true">⌖</span> {{ trail.lieu }}</p></div>
+      <div class="trail-card-body"><h2>{{ trail.nom }}</h2><p>{{ trail.description }}</p><p class="trail-place"><span aria-hidden="true">⌖</span> {{ trail.lieu }}</p>{% if trail.site_web %}<a class="trail-site-link" href="{{ trail.site_web }}" target="_blank" rel="noopener noreferrer">Site web de la course <span aria-hidden="true">↗</span></a>{% endif %}</div>
     </article>
     {% endfor %}
   </div>{% else %}<p class="empty-state">Les informations des courses seront bientôt disponibles.</p>{% endif %}

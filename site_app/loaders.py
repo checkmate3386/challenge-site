@@ -3,6 +3,7 @@ import json
 import re
 from datetime import date
 from pathlib import Path
+from urllib.parse import urlparse
 
 from django.conf import settings
 
@@ -51,6 +52,21 @@ def chemin_media(chemin):
     return _fichier_contenu(chemin) or ""
 
 
+def _url_externe(url):
+    """N'autorise que les liens vers des sites HTTP ou HTTPS."""
+    if not isinstance(url, str) or not url.strip():
+        return ""
+    valeur = url.strip()
+    try:
+        parsee = urlparse(valeur)
+        if parsee.scheme in ("http", "https") and parsee.netloc:
+            return valeur
+    except ValueError:
+        pass
+    print(f"Avertissement : URL de site de course invalide : {url}")
+    return ""
+
+
 def trails_valides():
     valides = []
     for trail in trails():
@@ -59,7 +75,11 @@ def trails_valides():
             print(f"Avertissement : trail incomplet ignoré : {trail.get('nom', '(sans nom)')}")
             continue
         affiche = _fichier_contenu(trail.get("affiche", ""))
-        valides.append({**trail, "affiche_url": affiche or ""})
+        valides.append({
+            **trail,
+            "affiche_url": affiche or "",
+            "site_web": _url_externe(trail.get("site_web", "")),
+        })
     return valides
 
 
