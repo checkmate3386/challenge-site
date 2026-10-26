@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "nom": "Cour'sla Pied",
+    "hommes": "archives/2025/noueilles_hommes.pdf",
+    "femmes": "archives/2025/noueilles_femmes.pdf",
+    "mixte": "NA"
+  },
+  {
+    "nom": "Challenge du souvenir et de la Paix",
+    "hommes": "archives/2025/pompert_hommes.pdf",
+    "femmes": "archives/2025/pompert_femmes.pdf",
+    "mixte": "NA"
+  },
+  {
+    "nom": "Akuma Run",
+    "hommes": "NA",
+    "femmes": "NA",
+    "mixte": "archives/2025/akuma.pdf"
+  },
+  {
+    "nom": "Biscoteaux Trail",
+    "hommes": "archives/2025/biscoteaux_hommes.pdf",
+    "femmes": "archives/2025/biscoteaux_femmes.pdf",
+    "mixte": "NA"
+  },
+  {
+    "nom": "Venerque Trail",
+    "hommes": "NA",
+    "femmes": "archives/2025/venerque_femmes.pdf",
+    "mixte": "NA"
+  },
+  {
+    "nom": "Classement général du challenge",
+    "hommes": "archives/2025/ctst_hommes.pdf",
+    "femmes": "archives/2025/ctst_femmes.pdf",
+    "mixte": "NA"
+  }
+]

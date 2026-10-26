@@ -1,1 +1,44 @@
-[]
+[
+{
+    "nom": "Classement général du challenge",
+    "hommes": "resultats/ctst_hommes.pdf",
+    "femmes": "resultats/ctst_femmes.pdf",
+    "mixte": "NA"
+  },
+  {
+    "nom": "Cour'sla Pied",
+    "hommes": "NA",
+    "femmes": "NA",
+    "mixte": "resultats/noueilles.pdf"
+  },
+  {
+    "nom": "Challenge du Souvenir et de la Paix",
+    "hommes": "resultats/pompert_hommes.pdf",
+    "femmes": "resultats/pompert_femmes.pdf",
+    "mixte": "NA"
+  },
+  {
+    "nom": "Akuma Run",
+    "hommes": "NA",
+    "femmes": "NA",
+    "mixte": "resultats/akuma.pdf"
+  },
+  {
+    "nom": "Biscoteaux Trail",
+    "hommes": "NA",
+    "femmes": "NA",
+    "mixte": "resultats/biscoteaux.pdf"
+  },
+  {
+    "nom": "Venerque Trail",
+    "hommes": "NA",
+    "femmes": "NA",
+    "mixte": "resultats/venerque.pdf"
+  },
+  {
+    "nom": "Trail Gaulois",
+    "hommes": "NA",
+    "femmes": "NA",
+    "mixte": "resultats/gaulois.pdf"
+  }
+]
