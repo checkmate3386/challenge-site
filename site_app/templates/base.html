@@ -35,11 +35,11 @@
         <a href="{{ accueil_url|with_base_path }}">Accueil</a>
         <a href="{{ a_propos_url|with_base_path }}">À propos</a>
         <a href="{{ trails_url|with_base_path }}">{{ nombre_trails }} Trail{{ nombre_trails|pluralize:"s" }}</a>
+        <a href="{{ resultats_url|with_base_path }}">Résultats</a>
         <a href="{{ partenaires_url|with_base_path }}">Partenaires</a>
         <a href="{{ membres_url|with_base_path }}">Membres</a>
         <a href="{{ contacts_url|with_base_path }}">Contacts</a>
         <a href="{{ reglement_url|with_base_path }}">Règlement</a>
-        <a href="{{ resultats_url|with_base_path }}">Résultats</a>
         {% if annees_archives %}
         <div class="nav-archives">
           <a href="{{ archives_url|with_base_path }}">Archives <span aria-hidden="true">⌄</span></a>
