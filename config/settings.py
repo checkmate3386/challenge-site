@@ -18,7 +18,8 @@ def lire_base_path():
 SITE_BASE_PATH = lire_base_path()
 DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "site-statique-challenge-trail")
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "testserver", ".onrender.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "testserver", ".onrender.com","challengetrailsudtoulousain.com","www.challengetrailsudtoulousain.com"]
+CSRF_TRUSTED_ORIGINS = ["https://www.challengetrailsudtoulousain.com","https://challengetrailsudtoulousain.com"]
 ROOT_URLCONF = "config.urls"
 INSTALLED_APPS = [
     "django.contrib.staticfiles",
