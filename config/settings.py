@@ -1,0 +1,55 @@
+"""Configuration simple du site et de sa génération statique."""
+import json
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+CONTENT_DIR = BASE_DIR / "content"
+
+
+def lire_base_path():
+    try:
+        with (CONTENT_DIR / "site.json").open(encoding="utf-8") as fichier:
+            return json.load(fichier).get("SITE_BASE_PATH", "").strip("/")
+    except (OSError, json.JSONDecodeError):
+        return ""
+
+
+SITE_BASE_PATH = lire_base_path()
+DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "site-statique-challenge-trail")
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "testserver", ".onrender.com"]
+ROOT_URLCONF = "config.urls"
+INSTALLED_APPS = [
+    "django.contrib.staticfiles",
+    "django_distill",
+    "site_app",
+]
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "django.middleware.common.CommonMiddleware",
+]
+TEMPLATES = [
+    {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [BASE_DIR / "site_app" / "templates"],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.static",
+                "django.template.context_processors.request",
+                "site_app.context_processors.site_context",
+            ],
+        },
+    },
+]
+WSGI_APPLICATION = "config.wsgi.application"
+DATABASES = {}
+LANGUAGE_CODE = "fr-fr"
+TIME_ZONE = "Europe/Paris"
+USE_I18N = True
+USE_TZ = True
+STATIC_URL = f"/{SITE_BASE_PATH + '/' if SITE_BASE_PATH else ''}static/"
+STATIC_ROOT = BASE_DIR / ".static-build"
+STATICFILES_DIRS = [CONTENT_DIR]
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

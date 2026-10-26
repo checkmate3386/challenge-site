@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Règlement — {{ site.titre }}{% endblock %}
+{% block content %}
+<section class="page-hero"><p class="eyebrow">Tout savoir avant le départ</p><h1>Le <span>règlement.</span></h1><p>Les règles communes pour un challenge équitable et convivial.</p></section>
+<section class="rules content-width section-space"><p class="rules-intro">{{ reglement.introduction }}</p>
+  <ol class="rules-list">{% for article in reglement.articles %}<li><span class="rule-number">{{ forloop.counter|stringformat:"02d" }}</span><div>{% if article.titre %}<h2>{{ article.titre }}</h2>{% endif %}<p>{{ article.texte }}</p></div></li>{% empty %}<li>Le règlement sera bientôt disponible.</li>{% endfor %}</ol>
+</section>
+{% endblock %}

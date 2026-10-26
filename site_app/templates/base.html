@@ -1,0 +1,67 @@
+{% load static site_tags %}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ site.titre|default:"Challenge Trail Sud Toulousain" }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}Le Challenge Trail Sud Toulousain rassemble des courses nature accessibles à tous.{% endblock %}">
+  <meta name="theme-color" content="#173f35">
+  <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  <script src="{% static 'js/menu.js' %}" defer></script>
+</head>
+<body>
+  {% url 'accueil' as accueil_url %}
+  {% url 'a_propos' as a_propos_url %}
+  {% url 'trails' as trails_url %}
+  {% url 'partenaires' as partenaires_url %}
+  {% url 'membres' as membres_url %}
+  {% url 'contacts' as contacts_url %}
+  {% url 'reglement' as reglement_url %}
+  {% url 'resultats' as resultats_url %}
+  {% url 'archives' as archives_url %}
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{{ accueil_url|with_base_path }}" aria-label="Accueil — {{ site.titre }}">
+        <img class="brand-logo" src="{% static 'logo/logo.png' %}" alt="" loading="lazy">
+        <span class="brand-name">Challenge <strong>Trail Sud Toulousain</strong></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">
+        <span class="sr-only">Ouvrir le menu</span><span class="menu-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="main-nav" id="navigation" aria-label="Navigation principale">
+        <a href="{{ accueil_url|with_base_path }}">Accueil</a>
+        <a href="{{ a_propos_url|with_base_path }}">À propos</a>
+        <a href="{{ trails_url|with_base_path }}">{{ nombre_trails }} Trail{{ nombre_trails|pluralize:"s" }}</a>
+        <a href="{{ partenaires_url|with_base_path }}">Partenaires</a>
+        <a href="{{ membres_url|with_base_path }}">Membres</a>
+        <a href="{{ contacts_url|with_base_path }}">Contacts</a>
+        <a href="{{ reglement_url|with_base_path }}">Règlement</a>
+        <a href="{{ resultats_url|with_base_path }}">Résultats</a>
+        {% if annees_archives %}
+        <div class="nav-archives">
+          <a href="{{ archives_url|with_base_path }}">Archives <span aria-hidden="true">⌄</span></a>
+          <div class="archive-menu">
+            {% for annee in annees_archives %}{% url 'archive_annee' annee=annee as archive_url %}<a href="{{ archive_url|with_base_path }}">{{ annee }}</a>{% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+  <main id="contenu">{% block content %}{% endblock %}</main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="{{ accueil_url|with_base_path }}">Challenge Trail Sud Toulousain</a>
+      <p>Courir ensemble, au cœur du Sud Toulousain.</p>
+      <nav aria-label="Liens de pied de page">
+        <a href="{{ contacts_url|with_base_path }}">Nous contacter</a>
+        <a href="{{ reglement_url|with_base_path }}">Règlement</a>
+      </nav>
+      <small>© {% now "Y" %} — Challenge Trail Sud Toulousain</small>
+    </div>
+  </footer>
+</body>
+</html>

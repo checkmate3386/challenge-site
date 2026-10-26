@@ -1,0 +1,17 @@
+{
+  "titre": "Challenge Trail Sud Toulousain",
+  "SITE_BASE_PATH": "",
+  "date_remise_prix": "2026-12-12",
+  "contacts": [
+    {
+      "nom": "Christophe Coustouzy",
+      "email": "christophe.coustouzy@live.fr",
+      "telephone": "06.46.11.34.46"
+    },
+    {
+      "nom": "Michel Blattes",
+      "email": "michel.blattes@gmail.com",
+      "telephone": "06.29.52.86.62"
+    }
+  ]
+}

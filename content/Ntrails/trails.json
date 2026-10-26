@@ -1,0 +1,9 @@
+[
+  {"affiche": "", "nom": "Trail des Coteaux", "description": "Une boucle vallonnée entre chemins de terre et petites routes de campagne.", "date": "15 mars", "lieu": "Saint-Lys"},
+  {"affiche": "", "nom": "La Boucle du Touch", "description": "Un parcours nature convivial au fil des sentiers et des berges.", "date": "12 avril", "lieu": "Plaisance-du-Touch"},
+  {"affiche": "", "nom": "Trail des Vignes", "description": "Des chemins en balcon et de beaux panoramas sur la campagne toulousaine.", "date": "17 mai", "lieu": "Rieumes"},
+  {"affiche": "", "nom": "Les Foulées du Lauragais", "description": "Une course accessible qui mêle chemins agricoles et passages ombragés.", "date": "14 juin", "lieu": "Seysses"},
+  {"affiche": "", "nom": "Trail de la Save", "description": "Une aventure nature entre sous-bois, ruisseaux et chemins vallonnés.", "date": "13 septembre", "lieu": "Lévignac"},
+  {"affiche": "", "nom": "Les Sentiers de la Louge", "description": "Un rendez-vous sportif et festif autour des sentiers du village.", "date": "11 octobre", "lieu": "Muret"},
+  {"affiche": "", "nom": "Trail des Lumières", "description": "La dernière étape du challenge dans une ambiance chaleureuse.", "date": "8 novembre", "lieu": "Fonsorbes"}
+]

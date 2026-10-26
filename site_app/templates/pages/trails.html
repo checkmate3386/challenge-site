@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Les trails — {{ site.titre }}{% endblock %}
+{% block content %}
+<section class="page-hero"><p class="eyebrow">Le calendrier du challenge</p><h1>{{ nombre_trails }} trails, <span>mille façons de courir.</span></h1><p>Découvrez les courses qui font vivre le challenge tout au long de l'année.</p></section>
+<section class="content-width section-space">
+  {% if trails %}<div class="trail-grid">
+    {% for trail in trails %}
+    <article class="trail-card">
+      <div class="trail-card-top"><span class="trail-number">{{ forloop.counter|stringformat:"02d" }}</span><span class="trail-date">{{ trail.date }}</span></div>
+      {% if trail.affiche_url %}
+        {% if trail.affiche_url|lower|slice:"-4:" == ".pdf" %}<a class="pdf-link" href="{% static trail.affiche_url %}" target="_blank" rel="noopener noreferrer">Voir l'affiche (PDF) <span aria-hidden="true">↗</span></a>
+        {% else %}<img class="trail-poster" src="{% static trail.affiche_url %}" alt="Affiche de {{ trail.nom }}" loading="lazy">{% endif %}
+      {% else %}<div class="trail-placeholder" aria-hidden="true"><span>COURSE<br>NATURE</span></div>{% endif %}
+      <div class="trail-card-body"><h2>{{ trail.nom }}</h2><p>{{ trail.description }}</p><p class="trail-place"><span aria-hidden="true">⌖</span> {{ trail.lieu }}</p></div>
+    </article>
+    {% endfor %}
+  </div>{% else %}<p class="empty-state">Les informations des courses seront bientôt disponibles.</p>{% endif %}
+</section>
+{% endblock %}

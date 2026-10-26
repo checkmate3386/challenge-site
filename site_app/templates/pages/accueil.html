@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static site_tags %}
+{% url 'trails' as trails_url %}
+{% url 'a_propos' as a_propos_url %}
+{% url 'contacts' as contacts_url %}
+{% block title %}Accueil — {{ site.titre|default:"Challenge Trail Sud Toulousain" }}{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">À vos marques, prêts, nature !</p>
+    <h1>Le trail, <span>en version Sud Toulousain.</span></h1>
+    <p class="hero-copy">{{ nombre_trails }} courses de 9 à 12 KMS — {{ nombre_trails }} lieux différents, vallonnés accessibles à tous ! Bienvenue sur le site du challenge Trail Sud Toulousain.</p>
+    <div class="hero-actions">
+      <a class="button button-light" href="{{ trails_url|with_base_path }}">Découvrir les trails <span aria-hidden="true">→</span></a>
+      <a class="text-link text-link-light" href="{{ a_propos_url|with_base_path }}">Notre challenge</a>
+    </div>
+    <div class="hero-note"><span class="pulse-dot"></span> Des courses pour tous les niveaux</div>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div>
+    <div class="trail-line"></div><span class="hero-stamp">COURIR<br>ENSEMBLE</span>
+  </div>
+</section>
+<section class="intro-band">
+  <div class="intro-grid">
+    <p class="eyebrow">Le challenge</p>
+    <h2>Un même terrain de jeu.<br><span>Des rendez-vous pour vibrer.</span></h2>
+    <p>Des sentiers, des villages et une belle énergie collective : retrouvez les associations du territoire et prenez le départ à votre rythme.</p>
+    <a class="text-link" href="{{ a_propos_url|with_base_path }}">En savoir plus <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+<section class="home-cta">
+  <div><p class="eyebrow">Prêt à rejoindre l'aventure ?</p><h2>On se retrouve sur les sentiers.</h2></div>
+  <a class="button button-dark" href="{{ contacts_url|with_base_path }}">Nous contacter <span aria-hidden="true">→</span></a>
+</section>
+{% endblock %}

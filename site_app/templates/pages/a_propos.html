@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static site_tags %}
+{% url 'contacts' as contacts_url %}
+{% block title %}À propos — {{ site.titre }}{% endblock %}
+{% block content %}
+<section class="page-hero"><p class="eyebrow">Notre histoire</p><h1>À propos du <span>challenge</span></h1><p>La passion du trail, partagée sur les chemins du Sud Toulousain.</p></section>
+<section class="story-section content-width">
+  <div class="story-image">
+    {% with image='illustrations/apropos.avif' %}
+      <img src="{% static image %}" alt="Paysage et sentier de course en pleine nature" loading="lazy">
+    {% endwith %}
+    <span class="image-caption">Le Sud Toulousain, grandeur nature</span>
+  </div>
+  <div class="story-copy"><p class="eyebrow">À propos du challenge</p><h2>Le goût des chemins et du collectif.</h2>
+    <p>Découvrez notre challenge trail du Sud Toulousain, né de la passion de fervent(e)s amateurs de course en plein air ! {{ nombre_trails|nombre_en_lettres|capfirst }} associations sportives et clubs d'athlétisme se sont unis pour offrir une expérience unique. Avec des distances de 9 à 12 kms, ce challenge est accessible à tous, des débutants aux coureurs expérimentés. Rejoignez-nous pour partager la joie de la course et vivre des moments inoubliables en pleine nature !</p>
+  </div>
+</section>
+<section class="join-panel content-width"><div class="join-mark" aria-hidden="true">✳</div><div><p class="eyebrow">À vos côtés</p><h2>Rejoignez notre challenge</h2><p>Pour participer au challenge, n'hésitez pas à contacter chaque responsable de trails, ou directement {{ site.contacts.0.nom|default:"Christophe" }} ou {{ site.contacts.1.nom|default:"Michel" }}. Ils seront ravis de vous aider et de vous donner toutes les informations nécessaires pour que vous puissiez vous engager dans cette aventure.</p></div><a class="button button-light" href="{{ contacts_url|with_base_path }}">Parlons-en <span aria-hidden="true">→</span></a></section>
+{% endblock %}

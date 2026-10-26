@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ titre_page }} — {{ site.titre }}{% endblock %}
+{% block content %}
+<section class="page-hero"><p class="eyebrow">Chrono, classement, bravo !</p><h1>{{ titre_page|default:"Résultats" }} <span>du challenge.</span></h1><p>Retrouvez les classements disponibles après chaque course.</p></section>
+<section class="content-width section-space"><div class="results-list">
+{% for course in courses %}<article class="result-card"><h2>{{ course.nom }}</h2><div class="result-links">
+  {% for genre, fichier in course.fichiers.items %}{% if fichier %}<a class="button button-outline" href="{% static fichier %}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span> Classement {{ genre }}</a>{% endif %}{% endfor %}
+  {% if not course.fichiers.hommes and not course.fichiers.femmes and not course.fichiers.mixte %}<span class="muted">Classements à venir</span>{% endif %}
+</div></article>{% empty %}<p class="empty-state">Les classements seront publiés après les courses.</p>{% endfor %}
+</div></section>
+{% endblock %}

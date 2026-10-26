@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% load site_tags %}
+{% block title %}Archives — {{ site.titre }}{% endblock %}
+{% block content %}
+<section class="page-hero"><p class="eyebrow">Les éditions précédentes</p><h1>Les <span>archives.</span></h1><p>Retrouvez les résultats des saisons passées.</p></section>
+<section class="content-width section-space"><div class="year-grid">{% for annee in annees %}{% url 'archive_annee' annee=annee as archive_url %}<a class="year-card" href="{{ archive_url|with_base_path }}"><span>Édition</span><strong>{{ annee }}</strong><span aria-hidden="true">→</span></a>{% empty %}<p class="empty-state">Aucune archive n'est encore disponible.</p>{% endfor %}</div></section>
+{% endblock %}

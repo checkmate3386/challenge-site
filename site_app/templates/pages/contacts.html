@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Contacts — {{ site.titre }}{% endblock %}
+{% block content %}
+<section class="page-hero"><p class="eyebrow">Une question ?</p><h1>À bientôt <span>sur les sentiers.</span></h1><p>Les responsables du challenge sont là pour vous guider.</p></section>
+<section class="contact-section content-width">
+  <div class="contact-copy"><p class="eyebrow">Infos par trail</p><h2>Contactez le responsable du trail souhaité.</h2><p>Et pour vous aider, n'hésitez pas à joindre les responsables du challenge. Ils vous donneront toutes les informations nécessaires pour participer.</p>
+    <div class="contact-list">{% for contact in site.contacts %}
+      <article class="contact-card"><span class="contact-icon" aria-hidden="true">✳</span><div><h3>{{ contact.nom }}</h3><a href="mailto:{{ contact.email }}">{{ contact.email }}</a><a href="tel:{{ contact.telephone|cut:' ' }}">Tel : {{ contact.telephone }}</a></div></article>
+    {% endfor %}</div>
+  </div>
+  <div class="contact-image"><img src="{% static 'contact/contact.jpeg' %}" alt="Illustration de sentiers et de collines" loading="lazy"></div>
+</section>
+{% endblock %}

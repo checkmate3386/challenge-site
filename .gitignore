@@ -1,0 +1,7 @@
+.venv/
+.vscode/
+__pycache__/
+*.py[cod]
+dist/
+.static-build/
+.DS_Store

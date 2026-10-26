@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static site_tags %}
+{% block title %}Partenaires — {{ site.titre }}{% endblock %}
+{% block content %}
+<section class="page-hero"><p class="eyebrow">À nos côtés</p><h1>Nos <span>partenaires.</span></h1><p>Merci à celles et ceux qui rendent le challenge possible.</p></section>
+<section class="content-width section-space"><div class="partner-grid">
+{% for partenaire in partenaires %}<article class="partner-card">
+  {% if partenaire.logo_url %}<img src="{% static partenaire.logo_url %}" alt="Logo de {{ partenaire.texte }}" loading="lazy">{% else %}<span class="partner-monogram" aria-hidden="true">{{ partenaire.texte|initiales }}</span>{% endif %}
+  <p>{{ partenaire.texte }}</p>
+</article>{% empty %}<p class="empty-state">La liste des partenaires sera bientôt mise à jour.</p>{% endfor %}
+</div></section>
+{% endblock %}
