@@ -4,7 +4,7 @@
     {"titre": "Classement", "texte": "Le challenge prendra en compte 5 des meilleures courses sur {nb_courses}."},
     {"titre": "Récompenses", "texte": "Il récompensera à égalité masculin, féminin, les 3 premiers et premières au scratch, mais aussi le premier et première de chaque catégorie de CA à M9."},
     {"titre": "Assiduité", "texte": "Le et la plus assidus seront aussi récompensés (prise en compte des {nb_courses} courses). Le club le plus représenté tout au long du challenge aura sa récompense."},
-    {"titre": "Remise des récompenses", "texte": "Une soirée de remise des récompenses sera organisée le {date_remise}, avec repas et animation. Les lauréats, organisateurs et partenaires seront invités."},
+    {"titre": "Remise des récompenses", "texte": "Une soirée de remise des récompenses sera organisée à la salle des fêtes Felix verdun de Pompertuzat le {date_remise}, avec repas et animation. Les lauréats, organisateurs et partenaires seront invités."},
     {"titre": "Gestion du challenge", "texte": "La gestion du challenge sera réalisée par la société CHRONO START. Un classement intermédiaire à l'issue de chaque course sera diffusé sur le site internet du challenge."},
     {"titre": "Acceptation du règlement", "texte": "La participation de chaque personne à ce challenge implique l'acceptation totale du règlement, ainsi que l'acceptation du règlement interne de chaque course à laquelle elle participera."}
   ]
