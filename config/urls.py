@@ -11,6 +11,8 @@ def annees_a_exporter():
 
 urlpatterns = [
     distill_path("", views.accueil, name="accueil"),
+    distill_path("robots.txt", views.robots_txt, name="robots_txt"),
+    distill_path("sitemap.xml", views.sitemap_xml, name="sitemap_xml"),
     distill_path("a-propos/", views.a_propos, name="a_propos"),
     distill_path("trails/", views.trails, name="trails"),
     distill_path("partenaires/", views.partenaires, name="partenaires"),

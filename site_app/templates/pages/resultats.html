@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}{{ titre_page }} — {{ site.titre }}{% endblock %}
+{% block description %}Consultez {{ titre_page|lower }} du Challenge Trail Sud Toulousain et retrouvez les classements disponibles après chaque course.{% endblock %}
+{% block og_title %}{{ titre_page }} — Challenge Trail Sud Toulousain{% endblock %}
+{% block og_description %}Retrouvez les résultats et classements des courses du Challenge Trail Sud Toulousain.{% endblock %}
 {% block content %}
 <section class="page-hero"><p class="eyebrow">Chrono, classement, bravo !</p><h1>{{ titre_page|default:"Résultats" }} <span>du challenge.</span></h1><p>Retrouvez les classements disponibles après chaque course.</p></section>
 <section class="content-width section-space"><div class="results-list">

@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ site.titre|default:"Challenge Trail Sud Toulousain" }}{% endblock %}</title>
   <meta name="description" content="{% block description %}Le Challenge Trail Sud Toulousain rassemble des courses nature accessibles à tous.{% endblock %}">
+  <link rel="canonical" href="{{ site_url }}{{ request.path|with_base_path }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="{% block og_title %}{{ site.titre }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}Le Challenge Trail Sud Toulousain rassemble des courses nature accessibles à tous.{% endblock %}">
+  <meta property="og:url" content="{{ site_url }}{{ request.path|with_base_path }}">
   <meta name="theme-color" content="#173f35">
   <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
   <link rel="stylesheet" href="{% static 'css/site.css' %}">

@@ -1,5 +1,10 @@
 """Vues des pages statiques."""
+from xml.etree import ElementTree
+
+from django.conf import settings
+from django.http import HttpResponse
 from django.shortcuts import render
+from django.urls import reverse
 
 from .loaders import (
     annees_archives,
@@ -10,6 +15,47 @@ from .loaders import (
     resultats_valides,
     trails_valides,
 )
+
+
+def sitemap_xml(request):
+    """Expose toutes les URL de pages réellement générées par le site."""
+    namespace = "http://www.sitemaps.org/schemas/sitemap/0.9"
+    ElementTree.register_namespace("", namespace)
+    sitemap = ElementTree.Element(f"{{{namespace}}}urlset")
+    chemins = [
+        reverse("accueil"),
+        reverse("a_propos"),
+        reverse("trails"),
+        reverse("partenaires"),
+        reverse("membres"),
+        reverse("contacts"),
+        reverse("reglement"),
+        reverse("resultats"),
+        reverse("archives"),
+        *(
+            reverse("archive_annee", kwargs={"annee": annee})
+            for annee in annees_archives()
+        ),
+    ]
+    prefixe = f"{settings.SITE_BASE_PATH}/" if settings.SITE_BASE_PATH else ""
+    for chemin in chemins:
+        entree = ElementTree.SubElement(sitemap, f"{{{namespace}}}url")
+        emplacement = ElementTree.SubElement(entree, f"{{{namespace}}}loc")
+        emplacement.text = f"{settings.SITE_URL}/{prefixe}{chemin.lstrip('/')}"
+
+    contenu = ElementTree.tostring(sitemap, encoding="utf-8", xml_declaration=True)
+    return HttpResponse(contenu, content_type="application/xml; charset=utf-8")
+
+
+def robots_txt(request):
+    """Autorise l'exploration des pages et indique le plan de site."""
+    prefixe = f"{settings.SITE_BASE_PATH}/" if settings.SITE_BASE_PATH else ""
+    contenu = (
+        "User-agent: *\n"
+        "Allow: /\n"
+        f"Sitemap: {settings.SITE_URL}/{prefixe}sitemap.xml\n"
+    )
+    return HttpResponse(contenu, content_type="text/plain; charset=utf-8")
 
 
 def accueil(request):

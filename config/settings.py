@@ -7,15 +7,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 CONTENT_DIR = BASE_DIR / "content"
 
 
-def lire_base_path():
+def lire_configuration_site():
     try:
         with (CONTENT_DIR / "site.json").open(encoding="utf-8") as fichier:
-            return json.load(fichier).get("SITE_BASE_PATH", "").strip("/")
+            configuration = json.load(fichier)
+        if isinstance(configuration, dict):
+            return configuration
     except (OSError, json.JSONDecodeError):
-        return ""
+        pass
+    return {}
 
 
-SITE_BASE_PATH = lire_base_path()
+SITE_CONFIG = lire_configuration_site()
+SITE_BASE_PATH = SITE_CONFIG.get("SITE_BASE_PATH", "").strip("/")
+SITE_URL = SITE_CONFIG.get(
+    "SITE_URL", "https://challengetrailsudtoulousain.com"
+).rstrip("/")
 DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "site-statique-challenge-trail")
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "testserver", ".onrender.com","challengetrailsudtoulousain.com","www.challengetrailsudtoulousain.com"]

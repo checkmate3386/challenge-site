@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Les trails — {{ site.titre }}{% endblock %}
+{% block description %}Consultez le calendrier des {{ nombre_trails }} trails du Sud Toulousain : dates, lieux, descriptions et liens des courses nature.{% endblock %}
+{% block og_title %}Calendrier des trails — Challenge Trail Sud Toulousain{% endblock %}
+{% block og_description %}Dates, lieux et informations sur les courses nature du Challenge Trail Sud Toulousain.{% endblock %}
 {% block content %}
 <section class="page-hero"><p class="eyebrow">Le calendrier du challenge</p><h1>{{ nombre_trails }} trails, <span>mille façons de courir.</span></h1><p>Découvrez les courses qui font vivre le challenge tout au long de l'année.</p></section>
 <section class="content-width section-space">
